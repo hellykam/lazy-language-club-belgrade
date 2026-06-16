@@ -23,14 +23,35 @@ and Google indexes it cleanly.
 | `netlify.toml` | Netlify config (no build, security headers) |
 | `nelli.jpg` | _(optional)_ guide photo — drop it in and it appears automatically |
 
-## Before going live — two things to replace
+## Status
 
-1. **Google Form link.** Search both `index.html` and `sr.html` for
-   `REPLACE_WITH_GOOGLE_FORM_LINK` and paste your form URL.
-2. **Domain.** All SEO URLs use the placeholder
-   `https://lazy-language-club-belgrade.netlify.app`. If your Netlify site name (or custom
-   domain) is different, find-and-replace that string across `index.html`, `sr.html`,
-   `robots.txt`, and `sitemap.xml`.
+- ✅ **Google Form** is wired into the "Apply" buttons on both pages (opens in a new tab).
+- ✅ **Domain** is set to `https://lazy-language-club-belgrade.netlify.app`. If that ever
+  changes, find-and-replace it across `index.html`, `sr.html`, `robots.txt`, `sitemap.xml`.
+- ✅ **Guide photo** `nelli.jpg` is in place.
+
+## Ads & analytics
+
+Tracking is staged but **inactive**. To turn it on:
+
+1. In the `<head>` of `index.html` **and** `sr.html`, find the `ADS / ANALYTICS` comment
+   block, uncomment the snippet(s) you need, and replace `G-XXXXXXXXXX` (GA4 / Google Ads)
+   or `YOUR_PIXEL_ID` (Meta/Instagram Pixel) with your real IDs.
+2. The "Apply" buttons carry `data-cta="apply"`. A small script at the bottom of `<body>`
+   automatically fires a conversion event (`apply_click` for GA4, `Lead` for Meta) the moment
+   any tag is live — no extra wiring needed.
+3. **Consent:** the audience is partly EU/Serbia, so the lawful approach is to load the
+   tags only after the visitor accepts cookies. A consent banner isn't included yet — ask
+   for one when you pick your ad platform, or load tags via Google Consent Mode.
+
+`privacy.html` (linked in both footers) is required for Google Ads approval and covers the
+Google Form + tracking. The Serbian half is a draft — have a native speaker review it.
+
+## Reviews block
+
+A styled, ready-to-go testimonials section is included **commented out** in both pages
+(search for `REVIEWS` / `RECENZIJE`). When you have real quotes, uncomment it and drop them
+in. Don't invent quotes.
 
 ## Local preview
 

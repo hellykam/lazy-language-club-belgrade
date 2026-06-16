@@ -31,6 +31,33 @@
 <meta name="twitter:description" content="Not a course — a language tasting. 4 weekend evenings, small group, in an art gallery.">
 <meta name="twitter:image" content="https://lazy-language-club-belgrade.netlify.app/og-image.png">
 <meta name="theme-color" content="#D9DAF6">
+
+<!-- ============================================================
+     ADS / ANALYTICS  (inactive until you paste your real IDs)
+     For EU/Serbia traffic, load these only after consent — see the
+     consent note in README.md. The CTA conversion hook at the bottom
+     of <body> fires automatically once any of these are active.
+
+  Google Analytics 4 / Google Ads — replace G-XXXXXXXXXX:
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  Meta (Facebook/Instagram) Pixel — replace YOUR_PIXEL_ID:
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
+  </script>
+============================================================ -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -134,6 +161,15 @@
   .guide{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
   @media(min-width:680px){.guide{grid-template-columns:.7fr 1.3fr;}}
   .guide .art{min-height:200px;}
+
+  /* reviews / testimonials (used by the #reviews section) */
+  .reviews{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px;}
+  @media(min-width:680px){.reviews{grid-template-columns:repeat(2,1fr);}}
+  .review{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;}
+  .review p{font-size:16px;margin-bottom:14px;}
+  .review .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
+  .review .who .name{font-family:'Spectral',serif;color:var(--ink);font-weight:600;}
+  .review .stars{color:var(--mint-deep);letter-spacing:2px;font-size:15px;margin-bottom:8px;}
 
   /* price */
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
@@ -387,6 +423,26 @@
     </div>
   </section>
 
+  <!-- REVIEWS — ready to go live. Uncomment and replace with REAL quotes from past
+       club members once you've gathered them. Keep 2–4 to start. Do not invent quotes.
+  <section id="reviews">
+    <p class="kicker">from past evenings</p>
+    <h2>What people say</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>“REAL QUOTE FROM A PAST MEMBER HERE.”</p>
+        <div class="who"><span class="name">First name</span> · what they tried (e.g. French &amp; Italian)</div>
+      </div>
+      <div class="review">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>“ANOTHER REAL QUOTE HERE.”</p>
+        <div class="who"><span class="name">First name</span> · their context</div>
+      </div>
+    </div>
+  </section>
+  -->
+
   <!-- PRICE -->
   <section id="price">
     <div class="price">
@@ -425,7 +481,7 @@
     <p class="lead" style="margin:0 auto 24px;">First cohort, founding price, 10 seats. Tell us what you want to speak and we'll build the group around it.</p>
 
     <!-- TODO: replace href with your Google Form link, or paste the form <iframe> below -->
-    <a class="cta" href="REPLACE_WITH_GOOGLE_FORM_LINK">Apply now →</a>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSckt-yKkWUbsH0DUhPLhLJKwjJsmKqELqTGbaXCW7Tk48m_gw/viewform" target="_blank" rel="noopener" data-cta="apply">Apply now →</a>
     <p class="cta-note">Takes 2 minutes. We'll get back to you to confirm your seat.</p>
 
     <!-- Google Form embed goes here, e.g.:
@@ -441,9 +497,23 @@
     Lazy Language Club · Belgrade ·
     <a href="https://t.me/lazylanguageclub">Telegram</a> ·
     <a href="#">Instagram</a> ·
-    made with the Paralang method
+    made with the Paralang method ·
+    <a href="/privacy.html">Privacy</a>
   </div>
 </footer>
+
+<script>
+  /* Conversion hook: fires when a visitor clicks through to the application form.
+     Safely no-ops until GA4 / Google Ads / Meta Pixel is enabled in <head>. */
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta="apply"]');
+    if (!el) return;
+    var label = (el.textContent || 'apply').trim();
+    if (typeof gtag === 'function') { gtag('event', 'apply_click', { event_category: 'cta', event_label: label }); }
+    if (window.dataLayer) { window.dataLayer.push({ event: 'apply_click', cta_label: label }); }
+    if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+  });
+</script>
 
 </body>
 </html>
