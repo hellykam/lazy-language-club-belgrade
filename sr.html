@@ -32,11 +32,25 @@
 <meta name="twitter:image" content="https://lazy-language-club-belgrade.netlify.app/og-image.png">
 <meta name="theme-color" content="#D9DAF6">
 
-<!-- Google tag (gtag.js) — GA4 / Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KJ0DZX0Y9"></script>
+<!-- Google tag (gtag.js) — GA4 / Google Ads, with Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Deny storage by default until the visitor accepts (EU/Serbia-friendly).
+  gtag('consent','default',{
+    ad_storage:'denied', analytics_storage:'denied',
+    ad_user_data:'denied', ad_personalization:'denied'
+  });
+  // Re-apply a previously saved "Accept" choice.
+  try{ if(localStorage.getItem('llc-consent')==='granted'){
+    gtag('consent','update',{
+      ad_storage:'granted', analytics_storage:'granted',
+      ad_user_data:'granted', ad_personalization:'granted'
+    });
+  }}catch(e){}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KJ0DZX0Y9"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-9KJ0DZX0Y9');
 </script>
@@ -177,6 +191,18 @@
   a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px;}
   .skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;z-index:50;text-decoration:none;}
   .skip-link:focus{left:0;}
+  /* cookie consent banner */
+  .cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;margin:0 auto;
+    background:var(--paper);border:2px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);
+    padding:16px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;}
+  .cookie-banner[hidden]{display:none;}
+  .cookie-banner p{font-size:14px;color:var(--ink);margin:0;flex:1 1 220px;line-height:1.5;}
+  .cookie-banner a{color:var(--blue);}
+  .cookie-actions{display:flex;gap:8px;}
+  .cookie-btn{font-family:inherit;font-size:14px;font-weight:500;padding:9px 16px;border-radius:10px;cursor:pointer;border:2px solid var(--ink);}
+  .cookie-accept{background:var(--mint);color:var(--ink);box-shadow:2px 2px 0 var(--ink);}
+  .cookie-decline{background:var(--paper);color:var(--ink);}
+  .cookie-btn:active{transform:translate(1px,1px);}
 </style>
 <script type="application/ld+json">
 {
@@ -255,12 +281,13 @@
       <div class="links">
         <a href="#how">Kako funkcioniše</a>
         <a href="#languages">Jezici</a>
+        <a href="#members">Utisci</a>
         <a href="#price">Cena</a>
         <a href="#apply">Prijava</a>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
         <span class="lang-switch" role="group" aria-label="Language / Jezik"><a href="index.html" hreflang="en" lang="en">EN</a><a class="on" href="sr.html" aria-current="page" lang="sr">SR</a></span>
-        <a class="cta cta-sm" href="#apply">Rezerviši mesto</a>
+        <a class="cta cta-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSckt-yKkWUbsH0DUhPLhLJKwjJsmKqELqTGbaXCW7Tk48m_gw/viewform" target="_blank" rel="noopener" data-cta="apply">Rezerviši mesto</a>
       </div>
     </nav>
   </div>
@@ -458,8 +485,7 @@
 <footer>
   <div class="wrap">
     Lazy Language Club · Beograd ·
-    <a href="https://t.me/lazylanguageclub">Telegram</a> ·
-    <a href="#">Instagram</a> ·
+    <a href="https://t.me/lazylanguageclub">Telegram (onlajn klub)</a> ·
     napravljeno uz Paralang metod ·
     <a href="/privacy.html">Privatnost</a>
   </div>
@@ -476,6 +502,32 @@
     if (window.dataLayer) { window.dataLayer.push({ event: 'apply_click', cta_label: label }); }
     if (typeof fbq === 'function') { fbq('track', 'Lead'); }
   });
+</script>
+
+<!-- Cookie consent banner — srpski tekst neka pregleda izvorni govornik pre objave. -->
+<div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-label="Saglasnost za kolačiće">
+  <p>Koristimo kolačiće da merimo posete i poboljšamo sajt. <a href="/privacy.html">Saznaj više</a>.</p>
+  <div class="cookie-actions">
+    <button id="cookie-decline" class="cookie-btn cookie-decline" type="button">Odbij</button>
+    <button id="cookie-accept" class="cookie-btn cookie-accept" type="button">Prihvati</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='llc-consent', b=document.getElementById('cookie-banner');
+  if(!b) return;
+  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+  if(saved!=='granted' && saved!=='denied'){ b.hidden=false; }
+  function choose(v){
+    try{localStorage.setItem(KEY,v);}catch(e){}
+    if(v==='granted' && typeof gtag==='function'){
+      gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+    }
+    b.hidden=true;
+  }
+  document.getElementById('cookie-accept').addEventListener('click',function(){choose('granted');});
+  document.getElementById('cookie-decline').addEventListener('click',function(){choose('denied');});
+})();
 </script>
 
 </body>
