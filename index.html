@@ -164,6 +164,8 @@
   .review .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
   .review .who .name{font-family:'Spectral',serif;color:var(--ink);font-weight:600;}
   .review .stars{color:var(--mint-deep);letter-spacing:2px;font-size:15px;margin-bottom:8px;}
+  .video-wrap{position:relative;max-width:720px;margin:18px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:#000;}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
   /* price */
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
@@ -240,6 +242,18 @@
     {"@type":"Question","name":"What if my languages don't match the group?","acceptedAnswer":{"@type":"Answer","text":"We balance every cohort from the applications so there are always enough partners for each language."}},
     {"@type":"Question","name":"Where and when?","acceptedAnswer":{"@type":"Answer","text":"A small gallery on Balkanska 44, Belgrade. Weekend sessions — Saturday evening or Sunday brunch time (we confirm with the group)."}}
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Lazy Language Club — member review",
+  "description": "A past member shares how the Lazy Language Club language tasting in Belgrade actually felt.",
+  "thumbnailUrl": ["https://i.ytimg.com/vi/4DT8mnyHFOY/hqdefault.jpg"],
+  "uploadDate": "2026-06-16",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/4DT8mnyHFOY",
+  "contentUrl": "https://youtu.be/4DT8mnyHFOY"
 }
 </script>
 </head>
@@ -417,7 +431,17 @@
     </div>
   </section>
 
-  <!-- REVIEWS — ready to go live. Uncomment and replace with REAL quotes from past
+  <!-- VIDEO REVIEW -->
+  <section id="reviews">
+    <p class="kicker">from a past member</p>
+    <h2>Hear how it actually feels</h2>
+    <p class="lead">A few honest words from someone who came to taste languages with us.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Member review — Lazy Language Club" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- TEXT REVIEWS — ready to go live. Uncomment and replace with REAL quotes from past
        club members once you've gathered them. Keep 2–4 to start. Do not invent quotes.
   <section id="reviews">
     <p class="kicker">from past evenings</p>

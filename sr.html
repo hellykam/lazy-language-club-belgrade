@@ -144,6 +144,8 @@
   .review .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
   .review .who .name{font-family:'Spectral',serif;color:var(--ink);font-weight:600;}
   .review .stars{color:var(--mint-deep);letter-spacing:2px;font-size:15px;margin-bottom:8px;}
+  .video-wrap{position:relative;max-width:720px;margin:18px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:#000;}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
   .price .big{font-family:'Spectral',serif;font-size:46px;font-weight:600;margin:8px 0;}
   .price .was{color:var(--muted);font-size:15px;}
@@ -208,6 +210,18 @@
     {"@type":"Question","name":"Šta ako se moji jezici ne poklope sa grupom?","acceptedAnswer":{"@type":"Answer","text":"Svaku grupu balansiramo na osnovu prijava, pa uvek ima dovoljno partnera za svaki jezik."}},
     {"@type":"Question","name":"Gde i kada?","acceptedAnswer":{"@type":"Answer","text":"Mala galerija u Balkanskoj 44, Beograd. Vikendom — subotom uveče ili nedeljom u vreme branča (potvrđujemo sa grupom)."}}
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Lazy Language Club — utisak polaznice",
+  "description": "Ranija polaznica deli kako je zaista izgledala degustacija jezika u Lazy Language Clubu u Beogradu.",
+  "thumbnailUrl": ["https://i.ytimg.com/vi/4DT8mnyHFOY/hqdefault.jpg"],
+  "uploadDate": "2026-06-16",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/4DT8mnyHFOY",
+  "contentUrl": "https://youtu.be/4DT8mnyHFOY"
 }
 </script>
 </head>
@@ -378,7 +392,18 @@
     </div>
   </section>
 
-  <!-- RECENZIJE — spremno za objavu. Otkomentariši i zameni PRAVIM citatima ranijih
+  <!-- VIDEO RECENZIJA -->
+  <!-- NAPOMENA: ovaj srpski tekst je prevod sa engleskog — neka ga izvorni govornik pregleda pre objave. -->
+  <section id="reviews">
+    <p class="kicker">utisak polaznice</p>
+    <h2>Poslušaj kako to zaista izgleda</h2>
+    <p class="lead">Nekoliko iskrenih reči osobe koja je došla da proba jezike sa nama.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Utisak polaznice — Lazy Language Club" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- TEKSTUALNE RECENZIJE — spremno za objavu. Otkomentariši i zameni PRAVIM citatima ranijih
        polaznika kada ih prikupiš. Počni sa 2–4. Ne izmišljaj citate.
   <section id="reviews">
     <p class="kicker">sa prethodnih večeri</p>
