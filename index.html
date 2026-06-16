@@ -32,22 +32,16 @@
 <meta name="twitter:image" content="https://lazy-language-club-belgrade.netlify.app/og-image.png">
 <meta name="theme-color" content="#D9DAF6">
 
-<!-- ============================================================
-     ADS / ANALYTICS  (inactive until you paste your real IDs)
-     For EU/Serbia traffic, load these only after consent — see the
-     consent note in README.md. The CTA conversion hook at the bottom
-     of <body> fires automatically once any of these are active.
+<!-- Google tag (gtag.js) — GA4 / Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KJ0DZX0Y9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9KJ0DZX0Y9');
+</script>
 
-  Google Analytics 4 / Google Ads — replace G-XXXXXXXXXX:
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  Meta (Facebook/Instagram) Pixel — replace YOUR_PIXEL_ID:
+<!-- Meta (Facebook/Instagram) Pixel — INACTIVE. Replace YOUR_PIXEL_ID and uncomment to enable.
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -56,7 +50,7 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
   </script>
-============================================================ -->
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

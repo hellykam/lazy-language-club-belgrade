@@ -16,3 +16,9 @@ og-image.svg.png
 
 # Original full-size source photo (optimized nelli.jpg is committed instead)
 Nelli Kam 01.png
+
+# Raw video / review source material — never commit (too large; host on YouTube/Vimeo)
+*.mp4
+*.mov
+*.avi
+*.webm
