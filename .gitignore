@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs / misc
+*.log
+
+# Netlify local
+.netlify/
+
+# Quick Look temp render
+og-image.svg.png
+
+# Original full-size source photo (optimized nelli.jpg is committed instead)
+Nelli Kam 01.png

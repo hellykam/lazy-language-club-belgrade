@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <!-- Full square canvas; real content lives in the centre 1200x630 band (y 285..915) -->
+  <rect width="1200" height="1200" fill="#ECECFB"/>
+  <rect x="32" y="317" width="1136" height="566" rx="36" fill="#D9DAF6"/>
+
+  <!-- text block -->
+  <text x="96" y="435" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="2" fill="#6A6EE2">BELGRADE · WEEKENDS · SMALL GROUP</text>
+  <text x="92" y="543" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">Taste languages.</text>
+  <text x="92" y="631" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">Don't enroll in a <tspan fill="#6A6EE2">marathon.</tspan></text>
+  <text x="96" y="715" font-family="Inter, Helvetica, Arial, sans-serif" font-size="29" fill="#2c2c38">A 4-evening language tasting in a tiny art gallery.</text>
+
+  <!-- brand pill -->
+  <rect x="96" y="755" width="430" height="64" rx="32" fill="#C7F0A1" stroke="#161616" stroke-width="3"/>
+  <text x="128" y="797" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" fill="#161616">Lazy Language Club</text>
+
+  <!-- mascot -->
+  <g transform="translate(1052,452) scale(1.32)">
+    <polygon points="35.4,-35.4 67.2,-47 45.3,-21.1" fill="#161616"/>
+    <polygon points="47.6,-15.5 81.2,-11.4 49.97,1.7" fill="#161616"/>
+    <polygon points="49.2,8.7 77.1,28 43.3,25" fill="#161616"/>
+    <polygon points="41,28.7 56.6,56.6 28.7,41" fill="#161616"/>
+    <circle cx="0" cy="0" r="52" fill="#161616"/>
+    <line x1="-40" y1="-18" x2="-72" y2="-30" stroke="#161616" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-74" cy="-31" r="6" fill="#161616"/>
+    <line x1="-44" y1="2" x2="-80" y2="2" stroke="#161616" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-82" cy="2" r="6" fill="#161616"/>
+    <path d="M-54,-20 C-60,-76 60,-76 54,-20" stroke="#161616" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="-56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/>
+    <circle cx="56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/>
+    <circle cx="12" cy="-8" r="26" fill="#fff"/>
+    <circle cx="6" cy="0" r="11" fill="#161616"/>
+  </g>
+</svg>
