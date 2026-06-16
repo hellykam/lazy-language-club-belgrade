@@ -136,16 +136,14 @@
   @media(min-width:680px){.guide{grid-template-columns:.7fr 1.3fr;}}
   .guide .art{min-height:200px;}
 
-  /* recenzije / utisci (koristi ih sekcija #reviews) */
-  .reviews{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px;}
-  @media(min-width:680px){.reviews{grid-template-columns:repeat(2,1fr);}}
-  .review{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;}
-  .review p{font-size:16px;margin-bottom:14px;}
-  .review .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
-  .review .who .name{font-family:'Spectral',serif;color:var(--ink);font-weight:600;}
-  .review .stars{color:var(--mint-deep);letter-spacing:2px;font-size:15px;margin-bottom:8px;}
-  .video-wrap{position:relative;max-width:720px;margin:18px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:#000;}
-  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  /* utisci (koristi ih sekcija #members) */
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px;}
+  .quote{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;}
+  .quote p{font-size:15px;line-height:1.6;}
+  .quote .who{margin-top:14px;font-size:14px;color:var(--muted);}
+  .quote .who a{color:var(--blue);text-decoration:none;}
+  .quote.video{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
+  @media(min-width:680px){.quote.video{grid-template-columns:1fr 1fr;}}
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
   .price .big{font-family:'Spectral',serif;font-size:46px;font-weight:600;margin:8px 0;}
   .price .was{color:var(--muted);font-size:15px;}
@@ -392,36 +390,30 @@
     </div>
   </section>
 
-  <!-- VIDEO RECENZIJA -->
-  <!-- NAPOMENA: ovaj srpski tekst je prevod sa engleskog — neka ga izvorni govornik pregleda pre objave. -->
-  <section id="reviews">
-    <p class="kicker">utisak polaznice</p>
-    <h2>Poslušaj kako to zaista izgleda</h2>
-    <p class="lead">Nekoliko iskrenih reči osobe koja je došla da proba jezike sa nama.</p>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Utisak polaznice — Lazy Language Club" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- TESTIMONIALS / UTISCI -->
+  <!-- NAPOMENA: srpski prevod citata neka pregleda izvorni govornik pre objave. -->
+  <section id="members">
+    <p class="kicker">iz našeg kluba</p>
+    <h2>Šta kažu članovi</h2>
+    <p class="lead">Pravi ljudi iz našeg onlajn kluba — koji radi pet večeri nedeljno više od dve godine.</p>
+    <div class="quotes">
+      <div class="quote video">
+        <iframe width="100%" height="260" src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Nadya — članica kluba" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:0;border-radius:14px;width:100%;aspect-ratio:16/9;height:auto"></iframe>
+        <div>
+          <p>„Dolazim samo da razgibam mozak — i ne pokušavam da ‘naučim’ korejski i japanski. I tatarski. I turski. I rumunski. I srpski. I holandski. Neka me neko zaustavi 😂 Ali sada umem da razlikujem te jezike i uživam u malim pobedama iz časa u čas.”</p>
+          <p class="who">Nadya</p>
+        </div>
+      </div>
+      <div class="quote"><p>„Dopisujem se u dve grupe na gruzijskom i prvi put mi je to stvarno lako. Pet godina mi je čitanje i odgovaranje bilo najteži zadatak — sve sam prevodila preko Google-a. Sad jednostavno pišem, najviše provirim jednu reč.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p></div>
+      <div class="quote"><p>„Obožavam koncept: učiš da brzo prebacuješ između jezika, opušteno, bez kritike i obaveze. Odlična vežba za mozak — i toliko motiviše biti među ljudima koji takođe uče.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p></div>
+      <div class="quote"><p>„Obično sam tvrdoglava osoba fokusirana na jednu stvar, ali klub mi je pokazao stvarno zanimljive stvari i otvorio me da probam nove pravce. Ono što smo radili sa japanskim pismom bilo je divno.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p></div>
+      <div class="quote"><p>„Susreti su na engleskom, pa mogu da vežbam — a svi tamo takođe uče, što mnogo olakšava prevazilaženje jezičke barijere. Plus metod: čini se da svi jezici imaju nešto zajedničko, a ovaj format pomaže da nađeš te veze.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p></div>
+      <div class="quote"><p>„Objektivno, niko ne ‘nauči’ desetak jezika onako kako većina to misli — ali razlikovati ih i umeti da pozdraviš i nekako se sporazumeš je sasvim realno. A atmosfera je tako prijateljska: niko ne viče, niko ne pritiska, pomažemo jedni drugima i smejemo se. Pored vežbe za mozak, odlazim odlično raspoložena.”</p><p class="who">Anya</p></div>
+      <div class="quote"><p>„Još mi nije sve jasno 😄 ali oduševljena sam! Vi ste sjajni. Sigurno dolazim opet — zapravo, želim da se pridružim za stalno.”</p><p class="who">Ergena, posle prvog časa</p></div>
+      <div class="quote"><p>„Prvog dana je zvučalo jako teško, ali sada ide bolje. Svaka nova gruzijska reč koju naučim čini da se osećam bolje. Hvala na strpljenju!”</p><p class="who">Dama iz Italije</p></div>
+      <div class="quote"><p>„Nelli, hvala — uživala sam na času!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p></div>
     </div>
   </section>
-
-  <!-- TEKSTUALNE RECENZIJE — spremno za objavu. Otkomentariši i zameni PRAVIM citatima ranijih
-       polaznika kada ih prikupiš. Počni sa 2–4. Ne izmišljaj citate.
-  <section id="reviews">
-    <p class="kicker">sa prethodnih večeri</p>
-    <h2>Šta ljudi kažu</h2>
-    <div class="reviews">
-      <div class="review">
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>„PRAVI CITAT RANIJEG POLAZNIKA OVDE.”</p>
-        <div class="who"><span class="name">Ime</span> · šta je probao/la (npr. francuski i italijanski)</div>
-      </div>
-      <div class="review">
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>„JOŠ JEDAN PRAVI CITAT OVDE.”</p>
-        <div class="who"><span class="name">Ime</span> · kontekst</div>
-      </div>
-    </div>
-  </section>
-  -->
 
   <section id="price">
     <div class="price">

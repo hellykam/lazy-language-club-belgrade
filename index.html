@@ -156,16 +156,14 @@
   @media(min-width:680px){.guide{grid-template-columns:.7fr 1.3fr;}}
   .guide .art{min-height:200px;}
 
-  /* reviews / testimonials (used by the #reviews section) */
-  .reviews{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px;}
-  @media(min-width:680px){.reviews{grid-template-columns:repeat(2,1fr);}}
-  .review{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;}
-  .review p{font-size:16px;margin-bottom:14px;}
-  .review .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
-  .review .who .name{font-family:'Spectral',serif;color:var(--ink);font-weight:600;}
-  .review .stars{color:var(--mint-deep);letter-spacing:2px;font-size:15px;margin-bottom:8px;}
-  .video-wrap{position:relative;max-width:720px;margin:18px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:#000;}
-  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  /* testimonials (used by the #members section) */
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px;}
+  .quote{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;}
+  .quote p{font-size:15px;line-height:1.6;}
+  .quote .who{margin-top:14px;font-size:14px;color:var(--muted);}
+  .quote .who a{color:var(--blue);text-decoration:none;}
+  .quote.video{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
+  @media(min-width:680px){.quote.video{grid-template-columns:1fr 1fr;}}
 
   /* price */
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
@@ -431,35 +429,29 @@
     </div>
   </section>
 
-  <!-- VIDEO REVIEW -->
-  <section id="reviews">
-    <p class="kicker">from a past member</p>
-    <h2>Hear how it actually feels</h2>
-    <p class="lead">A few honest words from someone who came to taste languages with us.</p>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Member review — Lazy Language Club" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- TESTIMONIALS -->
+  <section id="members">
+    <p class="kicker">from our club</p>
+    <h2>What members say</h2>
+    <p class="lead">Real people from our online club — running five evenings a week for over two years.</p>
+    <div class="quotes">
+      <div class="quote video">
+        <iframe width="100%" height="260" src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Nadya — club member" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:0;border-radius:14px;width:100%;aspect-ratio:16/9;height:auto"></iframe>
+        <div>
+          <p>“I come just to give my brain a workout — I'm not even trying to ‘learn’ Korean and Japanese. And Tatar. And Turkish. And Romanian. And Serbian. And Dutch. Somebody stop me 😂 But now I can tell these languages apart and enjoy small wins session after session.”</p>
+          <p class="who">Nadya</p>
+        </div>
+      </div>
+      <div class="quote"><p>“I'm chatting in two Georgian group chats and for the first time it feels easy. For five years, reading and replying was my hardest task — I used to Google-translate everything. Now I just write, maybe peeking at one word.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p></div>
+      <div class="quote"><p>“I love the concept: you learn to switch between languages quickly, in an easy mode, with no criticism and no obligation. It's a great brain workout — and so motivating to be around people who are also learning.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p></div>
+      <div class="quote"><p>“I'm usually a one-thing, stubborn kind of person, but the club has shown me really interesting things and made me open to trying new directions. What we did with the Japanese letters was wonderful.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p></div>
+      <div class="quote"><p>“The meetings are in English, so I get to practice — and everyone there is learning too, which makes it so much easier to get over the language barrier. Plus the method: all languages seem to share something, and this format helps you find those connections.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p></div>
+      <div class="quote"><p>“Objectively, nobody ‘learns’ a dozen languages the way most people mean it — but telling them apart and managing to say hello and interact is completely real. The atmosphere is so friendly: nobody yells, nobody pressures, we help each other and we laugh. Besides the brain workout, I leave in a great mood.”</p><p class="who">Anya</p></div>
+      <div class="quote"><p>“Not much is clear yet 😄 but I loved it! You're awesome. I'm definitely coming back — actually, I want to join for good.”</p><p class="who">Ergena, after her first session</p></div>
+      <div class="quote"><p>“It sounded so difficult on the first day, but now things are going better. Every new Georgian word I learn makes me feel better. Thank you for your patience!”</p><p class="who">A lady from Italy</p></div>
+      <div class="quote"><p>“Nelli, thank you — I had a blast in that session!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p></div>
     </div>
   </section>
-
-  <!-- TEXT REVIEWS — ready to go live. Uncomment and replace with REAL quotes from past
-       club members once you've gathered them. Keep 2–4 to start. Do not invent quotes.
-  <section id="reviews">
-    <p class="kicker">from past evenings</p>
-    <h2>What people say</h2>
-    <div class="reviews">
-      <div class="review">
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>“REAL QUOTE FROM A PAST MEMBER HERE.”</p>
-        <div class="who"><span class="name">First name</span> · what they tried (e.g. French &amp; Italian)</div>
-      </div>
-      <div class="review">
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>“ANOTHER REAL QUOTE HERE.”</p>
-        <div class="who"><span class="name">First name</span> · their context</div>
-      </div>
-    </div>
-  </section>
-  -->
 
   <!-- PRICE -->
   <section id="price">
