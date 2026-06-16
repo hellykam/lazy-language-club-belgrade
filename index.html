@@ -117,6 +117,7 @@
   .art{display:flex;justify-content:center;align-items:center;position:relative;min-height:240px;order:-1;}
   @media(min-width:760px){.art{order:0;}}
   .doodle{position:absolute;font-size:30px;color:var(--blue);}
+  .flagbadge{position:absolute;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:2px 2px 0 var(--ink);}
   .float{animation:float 4s ease-in-out infinite;}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
@@ -331,22 +332,25 @@
   <!-- HERO -->
   <section class="hero" id="hero" style="padding-top:54px;">
     <div>
-      <p class="eyebrow">belgrade · weekends · small group</p>
-      <h1>Taste languages.<br>Don't enroll in a <span class="accent">marathon.</span></h1>
-      <p class="lead">A 4-evening language tasting in a tiny Belgrade gallery. Pick at least two languages, put on your headphones, and actually start speaking — no homework, no grades, no pressure.</p>
+      <p class="eyebrow">weekends · small group · headphones-on</p>
+      <h1>Taste <span class="accent">six languages</span> in one evening.</h1>
+      <p class="lead">Six languages, four cozy evenings, one tiny Belgrade gallery. Pick at least two, put on your headphones, and start speaking — relaxed, beginner-friendly, and just for the joy of it.</p>
       <a class="cta" href="#apply">Apply to the founding group →</a>
       <p class="cta-note">First cohort · founding price · 10 seats only</p>
       <div class="chips">
         <span class="chip">🎧 Headphones-on shadowing</span>
         <span class="chip">Zero level welcome</span>
         <span class="chip">Max 10 people</span>
-        <span class="chip">In an art gallery</span>
+        <span class="chip">Balkanska 44, Belgrade</span>
       </div>
     </div>
     <div class="art">
-      <span class="hand doodle" style="top:6px;left:8px;transform:rotate(-8deg)">ćao!</span>
-      <span class="hand doodle" style="bottom:18px;right:0;transform:rotate(6deg)">bonjour</span>
-      <span class="hand doodle" style="top:46px;right:4px;transform:rotate(4deg)">hola</span>
+      <span class="flagbadge float" style="top:0;left:16%;animation-delay:0s">🇷🇸</span>
+      <span class="flagbadge float" style="top:8%;right:8%;animation-delay:.5s">🇫🇷</span>
+      <span class="flagbadge float" style="top:40%;left:-2%;animation-delay:1s">🇮🇹</span>
+      <span class="flagbadge float" style="top:46%;right:-2%;animation-delay:1.5s">🇪🇸</span>
+      <span class="flagbadge float" style="bottom:6%;left:12%;animation-delay:2s">🇬🇧</span>
+      <span class="flagbadge float" style="bottom:0;right:16%;animation-delay:2.5s">🇩🇪</span>
       <svg class="float" width="240" viewBox="-100 -92 200 196" role="img" aria-label="Lazy Language Club mascot wearing headphones">
         <use href="#llc-body"/><use href="#llc-eye"/>
         <path d="M-54,-20 C-60,-76 60,-76 54,-20" stroke="#161616" stroke-width="8" fill="none" stroke-linecap="round"/>
@@ -379,8 +383,8 @@
 
   <!-- LANGUAGES -->
   <section id="languages">
-    <p class="kicker">what's on the menu</p>
-    <h2>Choose your languages</h2>
+    <p class="kicker">pick a flight of two</p>
+    <h2>Tonight's tasting menu</h2>
     <p class="lead">Pick at least two — one to learn, one you already speak, or two you want to dabble in.</p>
     <div class="langs">
       <div class="lang"><span class="flag">🇷🇸</span> Serbian</div>

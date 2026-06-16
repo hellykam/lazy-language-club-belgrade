@@ -111,6 +111,7 @@
   .art{display:flex;justify-content:center;align-items:center;position:relative;min-height:240px;order:-1;}
   @media(min-width:760px){.art{order:0;}}
   .doodle{position:absolute;font-size:30px;color:var(--blue);}
+  .flagbadge{position:absolute;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:2px 2px 0 var(--ink);}
   .float{animation:float 4s ease-in-out infinite;}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
   .kicker{font-family:'Spectral',serif;font-style:italic;font-size:18px;color:var(--muted);margin-bottom:6px;}
@@ -298,22 +299,25 @@
 
   <section class="hero" id="hero" style="padding-top:54px;">
     <div>
-      <p class="eyebrow">beograd · vikendom · mala grupa</p>
-      <h1>Probaj jezike.<br>Ne upisuj se na <span class="accent">maraton.</span></h1>
-      <p class="lead">Četiri večeri degustacije jezika u maloj beogradskoj galeriji. Izaberi bar dva jezika, stavi slušalice i stvarno progovori — bez domaćih zadataka, ocena i pritiska.</p>
+      <p class="eyebrow">vikendom · mala grupa · sa slušalicama</p>
+      <h1>Probaj <span class="accent">šest jezika</span> u jednoj večeri.</h1>
+      <p class="lead">Šest jezika, četiri opuštene večeri, jedna mala beogradska galerija. Izaberi bar dva, stavi slušalice i progovori — opušteno, za početnike i čisto iz zadovoljstva.</p>
       <a class="cta" href="#apply">Prijavi se u prvu grupu →</a>
       <p class="cta-note">Prva grupa · osnivačka cena · samo 10 mesta</p>
       <div class="chips">
         <span class="chip">🎧 Shadowing sa slušalicama</span>
         <span class="chip">Početnici dobrodošli</span>
         <span class="chip">Najviše 10 ljudi</span>
-        <span class="chip">U umetničkoj galeriji</span>
+        <span class="chip">Balkanska 44, Beograd</span>
       </div>
     </div>
     <div class="art">
-      <span class="hand doodle" style="top:6px;left:8px;transform:rotate(-8deg)">ćao!</span>
-      <span class="hand doodle" style="bottom:18px;right:0;transform:rotate(6deg)">bonjour</span>
-      <span class="hand doodle" style="top:46px;right:4px;transform:rotate(4deg)">hola</span>
+      <span class="flagbadge float" style="top:0;left:16%;animation-delay:0s">🇷🇸</span>
+      <span class="flagbadge float" style="top:8%;right:8%;animation-delay:.5s">🇫🇷</span>
+      <span class="flagbadge float" style="top:40%;left:-2%;animation-delay:1s">🇮🇹</span>
+      <span class="flagbadge float" style="top:46%;right:-2%;animation-delay:1.5s">🇪🇸</span>
+      <span class="flagbadge float" style="bottom:6%;left:12%;animation-delay:2s">🇬🇧</span>
+      <span class="flagbadge float" style="bottom:0;right:16%;animation-delay:2.5s">🇩🇪</span>
       <svg class="float" width="240" viewBox="-100 -92 200 196" role="img" aria-label="Maskota Lazy Language Cluba sa slušalicama">
         <use href="#llc-body"/><use href="#llc-eye"/>
         <path d="M-54,-20 C-60,-76 60,-76 54,-20" stroke="#161616" stroke-width="8" fill="none" stroke-linecap="round"/>
@@ -343,8 +347,8 @@
   </section>
 
   <section id="languages">
-    <p class="kicker">šta je na meniju</p>
-    <h2>Izaberi svoje jezike</h2>
+    <p class="kicker">izaberi dva za probu</p>
+    <h2>Današnji meni za degustaciju</h2>
     <p class="lead">Izaberi bar dva — jedan da učiš, jedan koji već govoriš, ili dva koja želiš da probaš.</p>
     <div class="langs">
       <div class="lang"><span class="flag">🇷🇸</span> Srpski</div>
