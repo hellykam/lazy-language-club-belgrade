@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Lazy Language Club — host a language tasting</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Caveat:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--lilac:#D9DAF6;--lilac-soft:#ECECFB;--ink:#161616;--mint:#C7F0A1;--blue:#6A6EE2;--coral:#F4A582;--muted:#5c5c6b;--line:#cdcef0;--paper:#fff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#e9e9f3;padding:22px 0;}
+  .deck{max-width:960px;margin:0 auto;padding:0 16px;}
+  .slide{width:100%;aspect-ratio:297/210;background:var(--paper);border-radius:18px;border:1px solid var(--line);
+         margin:0 auto 20px;padding:46px 52px;position:relative;display:flex;flex-direction:column;overflow:hidden;}
+  h1,h2{font-family:'Spectral',Georgia,serif;font-weight:600;line-height:1.05;}
+  .num{font-size:12px;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;font-weight:500;}
+  .two{display:flex;gap:34px;flex:1;align-items:center;}
+  .tcol{flex:1;}
+  .art{flex:0 0 230px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .lead{font-size:18px;color:#2c2c38;line-height:1.5;margin-top:14px;}
+  .pts{list-style:none;margin-top:14px;}
+  .pts li{font-size:16px;padding:6px 0 6px 24px;position:relative;line-height:1.4;}
+  .pts li::before{content:"·";position:absolute;left:4px;color:var(--blue);font-weight:700;font-size:20px;}
+  .hand{font-family:'Caveat',cursive;color:var(--blue);}
+  .flagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+  .fb{width:42px;height:42px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:2px 2px 0 var(--ink);}
+  .cover{background:var(--lilac);align-items:flex-start;justify-content:center;}
+  .cover h1{font-size:46px;}
+  .cta{display:inline-block;background:var(--mint);color:var(--ink);font-weight:500;font-size:16px;padding:11px 20px;border-radius:12px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);margin-top:18px;}
+  .foot{position:absolute;left:52px;bottom:26px;font-size:13px;color:var(--muted);}
+  .stepbox{background:var(--lilac-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;}
+  .stepbox .n{font-family:'Spectral',serif;font-size:26px;color:var(--blue);}
+  .stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
+  .stepgrid h3{font-size:15px;margin:4px 0 3px;}
+  .stepgrid p{font-size:13px;color:var(--muted);line-height:1.35;}
+  @media print{
+    body{background:#fff;padding:0;}
+    @page{size:A4 landscape;margin:0;}
+    .deck{max-width:none;padding:0;}
+    .slide{margin:0;border-radius:0;border:0;width:297mm;height:210mm;page-break-after:always;}
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="m-body">
+    <polygon points="35.4,-35.4 67.2,-47 45.3,-21.1" fill="#161616"/><polygon points="47.6,-15.5 81.2,-11.4 49.97,1.7" fill="#161616"/>
+    <polygon points="49.2,8.7 77.1,28 43.3,25" fill="#161616"/><polygon points="41,28.7 56.6,56.6 28.7,41" fill="#161616"/>
+    <circle cx="0" cy="0" r="52" fill="#161616"/>
+    <line x1="-40" y1="-18" x2="-72" y2="-30" stroke="#161616" stroke-width="5" stroke-linecap="round"/><circle cx="-74" cy="-31" r="6" fill="#161616"/>
+    <line x1="-44" y1="2" x2="-80" y2="2" stroke="#161616" stroke-width="5" stroke-linecap="round"/><circle cx="-82" cy="2" r="6" fill="#161616"/>
+    <path d="M-16,48 L-16,90 L0,90" stroke="#161616" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16,50 L16,90 L32,90" stroke="#161616" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="m-eye"><circle cx="12" cy="-8" r="26" fill="#fff"/><circle cx="6" cy="0" r="11" fill="#161616"/></g>
+  <g id="m-phones"><path d="M-54,-20 C-60,-76 60,-76 54,-20" stroke="#161616" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="-56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/><circle cx="56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/></g>
+</defs></svg>
+
+<div class="deck">
+
+  <!-- 1 COVER -->
+  <div class="slide cover">
+    <div class="two">
+      <div class="tcol">
+        <div class="num">Lazy Language Club · Belgrade</div>
+        <h1>Bring a <span style="color:var(--blue)">language tasting</span> to your space.</h1>
+        <p class="lead">A warm, low-pressure language event for cafés &amp; art spaces — guests taste languages over a drink, with headphones and good company.</p>
+        <div class="flagrow"><span class="fb">🇷🇸</span><span class="fb">🇬🇧</span><span class="fb">🇫🇷</span><span class="fb">🇮🇹</span><span class="fb">🇪🇸</span><span class="fb">🇹🇷</span><span class="fb">🇷🇺</span></div>
+      </div>
+      <div class="art">
+        <svg width="220" viewBox="-100 -92 200 196" role="img" aria-label="mascot"><use href="#m-body"/><use href="#m-eye"/><use href="#m-phones"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 WHAT IT IS -->
+  <div class="slide">
+    <div class="num">01 · what it is</div>
+    <h2>Not a class — a tasting.</h2>
+    <p class="lead">An evening where guests sample several languages: hear a native in the headphones, repeat, then chat with a partner — and swap. Guided by Nelli, who's run a language club for 2.5 years (hundreds of evenings).</p>
+    <div class="stepgrid">
+      <div class="stepbox"><div class="n">1</div><h3>Listen 🎧</h3><p>Scan a QR, a native reads the line into your headphones.</p></div>
+      <div class="stepbox"><div class="n">2</div><h3>Shadow</h3><p>Repeat out loud — catch the sound, no grammar drills.</p></div>
+      <div class="stepbox"><div class="n">3</div><h3>Speak</h3><p>Run the dialogue with a partner, then swap partners.</p></div>
+    </div>
+  </div>
+
+  <!-- 3 WHAT WE NEED -->
+  <div class="slide">
+    <div class="two">
+      <div class="tcol">
+        <div class="num">02 · what we need from you</div>
+        <h2>You host. We run it.</h2>
+        <ul class="pts">
+          <li>A cozy corner for up to 10 people</li>
+          <li>One weekend slot (Sat evening or Sun brunch)</li>
+          <li>A shout-out to your community (one post / story)</li>
+        </ul>
+        <p class="lead">We bring the method, the printed sheets, the native audio, and the energy.</p>
+      </div>
+      <div class="art"><svg width="180" viewBox="-100 -92 200 196" role="img" aria-label="mascot"><use href="#m-body"/><use href="#m-eye"/></svg></div>
+    </div>
+  </div>
+
+  <!-- 4 WHAT'S IN IT -->
+  <div class="slide">
+    <div class="num">03 · what it brings you</div>
+    <h2>A cultural event that pays its way.</h2>
+    <ul class="pts">
+      <li>Fills quiet hours with a recurring, on-brand event</li>
+      <li>Draws an engaged, paying crowd of expats + locals — drinks &amp; food sales</li>
+      <li>Fresh, photogenic content for your socials</li>
+      <li>Positions your space as a real community hub</li>
+    </ul>
+  </div>
+
+  <!-- 5 BIGGER PICTURE + CTA -->
+  <div class="slide cover">
+    <div class="two">
+      <div class="tcol">
+        <div class="num">04 · the bigger picture</div>
+        <h2>A small bridge between expats &amp; locals.</h2>
+        <p class="lead">People who live side by side in Belgrade, actually talking — in several languages, over a drink. Let's run one pilot evening together and see the room light up.</p>
+        <span class="hand" style="font-size:22px">let's taste some languages together →</span>
+      </div>
+      <div class="art"><svg width="200" viewBox="-100 -92 200 196" role="img" aria-label="mascot"><use href="#m-body"/><use href="#m-eye"/><use href="#m-phones"/></svg></div>
+    </div>
+    <div class="foot">Nelli · <a href="https://t.me/nelly_k" style="color:var(--blue)">t.me/nelly_k</a> · zaap.bio/nellikam · made with the Paralang method</div>
+  </div>
+
+</div>
+</body>
+</html>
