@@ -5,8 +5,8 @@
 
   <!-- text block -->
   <text x="96" y="435" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="2" fill="#6A6EE2">BELGRADE · WEEKENDS · SMALL GROUP</text>
-  <text x="92" y="543" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">Taste languages.</text>
-  <text x="92" y="631" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">Don't enroll in a <tspan fill="#6A6EE2">marathon.</tspan></text>
+  <text x="92" y="543" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">Taste <tspan fill="#6A6EE2">six languages</tspan></text>
+  <text x="92" y="631" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#161616">in one evening.</text>
   <text x="96" y="715" font-family="Inter, Helvetica, Arial, sans-serif" font-size="29" fill="#2c2c38">A 4-evening language tasting in a tiny art gallery.</text>
 
   <!-- brand pill -->

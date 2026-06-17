@@ -91,16 +91,31 @@
   nav .links a{text-decoration:none;opacity:.8;}
   nav .links a:hover{opacity:1;}
   nav .links{display:none;}
+  nav .nav-actions{display:flex;align-items:center;gap:10px;}
   @media(min-width:760px){nav .links{display:flex;}}
+  /* mobile header cleanup: brand on its own full-width line, actions below */
+  @media(max-width:759px){
+    .wrap{padding:0 18px;}
+    nav{flex-wrap:wrap;gap:10px 12px;}
+    nav .brand{flex:1 1 100%;font-size:22px;}
+    nav .nav-actions{width:100%;justify-content:space-between;}
+    /* EN/SR as a compact inline text toggle (link style) */
+    .lang-switch{gap:0;font-size:14px;}
+    .lang-switch a{border:none;border-radius:0;padding:2px 0;opacity:.6;}
+    .lang-switch a.on{background:none;color:var(--ink);opacity:1;font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+    .lang-switch a + a{margin-left:8px;padding-left:9px;border-left:1px solid var(--line);}
+    /* smaller reserve button */
+    header .cta-sm{padding:9px 15px;font-size:13px;white-space:nowrap;box-shadow:2px 2px 0 var(--ink);}
+  }
   .cta{display:inline-block;background:var(--mint);color:var(--ink);font-weight:500;font-size:17px;
        padding:15px 30px;border-radius:14px;text-decoration:none;border:2px solid var(--ink);
        box-shadow:3px 3px 0 var(--ink);transition:transform .08s,box-shadow .08s;}
   .cta:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);}
   .cta-sm{padding:11px 20px;font-size:15px;box-shadow:2px 2px 0 var(--ink);}
   .cta-note{font-size:13px;color:var(--muted);margin-top:12px;}
-  .hero{background:var(--lilac);border-radius:28px;padding:54px 48px;margin:18px 0 0;
+  .hero{background:var(--lilac);border-radius:24px;padding:30px 20px;margin:14px 0 0;
         display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
-  @media(min-width:760px){.hero{grid-template-columns:1.15fr .85fr;gap:24px;padding:58px 52px;}}
+  @media(min-width:760px){.hero{grid-template-columns:1.15fr .85fr;gap:24px;padding:58px 52px;border-radius:28px;margin-top:18px;}}
   .eyebrow{font-size:14px;letter-spacing:.04em;color:var(--blue);font-weight:500;margin-bottom:14px;}
   h1{font-size:42px;letter-spacing:-.01em;}
   @media(min-width:760px){h1{font-size:56px;}}
@@ -286,7 +301,7 @@
         <a href="#price">Cena</a>
         <a href="#apply">Prijava</a>
       </div>
-      <div style="display:flex;align-items:center;gap:10px;">
+      <div class="nav-actions">
         <span class="lang-switch" role="group" aria-label="Language / Jezik"><a href="index.html" hreflang="en" lang="en">EN</a><a class="on" href="sr.html" aria-current="page" lang="sr">SR</a></span>
         <a class="cta cta-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSckt-yKkWUbsH0DUhPLhLJKwjJsmKqELqTGbaXCW7Tk48m_gw/viewform" target="_blank" rel="noopener" data-cta="apply">Rezerviši mesto</a>
       </div>
@@ -417,6 +432,10 @@
         <p class="kicker">tvoj vodič</p>
         <h2>Ja sam Neli — i nisam izvorni govornik ni nastavnik.</h2>
         <p class="lead">U tome je poenta. Krenula sam od nule i, koristeći ovaj metod (shadowing + čitanje + mali dijalozi), sada čitam na 10+ jezika i dve godine vodim besplatan onlajn jezički klub pet puta nedeljno. Nisam tu da ti ocenjujem gramatiku — tu sam da ti dam sistem koji je stvarno upalio kod mene i da prostor učinim bezbednim i zabavnim. Izgovor izvornih govornika dolazi iz snimaka. Ja donosim metod, strukturu i energiju.</p>
+        <p class="cta-note" style="margin-top:14px;">
+          <a href="https://zaap.bio/nellikam" target="_blank" rel="noopener" style="color:var(--blue);">Više o meni ↗</a>
+          &nbsp;·&nbsp; tg: <a href="https://t.me/nelly_k" target="_blank" rel="noopener" style="color:var(--blue);">@nelly_k</a>
+        </p>
       </div>
     </div>
   </section>
