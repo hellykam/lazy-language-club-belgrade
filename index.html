@@ -194,6 +194,21 @@
   .quote .who a{color:var(--blue);text-decoration:none;}
   .quote.video{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
   @media(min-width:680px){.quote.video{grid-template-columns:1fr 1fr;}}
+  /* clickable review cards + "read full" affordance */
+  .quote[role="button"]{cursor:pointer;transition:transform .08s,box-shadow .08s;}
+  .quote[role="button"]:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--line);}
+  .rm-cue,.rm-trigger{display:inline-block;margin-top:12px;color:var(--blue);font-size:13px;font-weight:500;}
+  .rm-trigger{background:none;border:none;padding:0;font-family:inherit;cursor:pointer;}
+  .quote[role="button"]:hover .rm-cue,.rm-trigger:hover{text-decoration:underline;}
+  .quote .rm-full{display:none;}
+  /* review modal (native <dialog>) */
+  .review-modal{border:none;padding:0;background:transparent;max-width:560px;width:calc(100% - 32px);max-height:calc(100dvh - 40px);}
+  .review-modal::backdrop{background:rgba(22,22,22,.55);backdrop-filter:blur(2px);}
+  .rm-inner{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--ink);padding:30px 28px;max-height:calc(100dvh - 44px);overflow:auto;}
+  .rm-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:10px;border:2px solid var(--ink);background:var(--lilac);font-size:15px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .rm-name{font-family:'Spectral',serif;font-weight:600;font-size:18px;margin-bottom:14px;padding-right:44px;color:var(--ink);}
+  .rm-name a{color:var(--blue);text-decoration:none;}
+  .rm-body{font-size:16px;line-height:1.7;color:#2c2c38;}
 
   /* price */
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
@@ -485,23 +500,34 @@
     <h2>What members say</h2>
     <p class="lead">Real people from our online club — running five evenings a week for over two years.</p>
     <div class="quotes">
-      <div class="quote video">
+      <div class="quote video" data-review>
         <iframe width="100%" height="260" src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Nadya — club member" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:0;border-radius:14px;width:100%;aspect-ratio:16/9;height:auto"></iframe>
         <div>
           <p>“I come just to give my brain a workout — I'm not even trying to ‘learn’ Korean and Japanese. And Tatar. And Turkish. And Romanian. And Serbian. And Dutch. Somebody stop me 😂 But now I can tell these languages apart and enjoy small wins session after session.”</p>
           <p class="who">Nadya</p>
+          <button type="button" class="rm-trigger" aria-haspopup="dialog">Read full →</button>
+          <div class="rm-full" hidden>I come just to give my brain a workout — I'm not even aiming to "learn" Korean and Japanese. And Tatar, and Turkish. And Romanian. And Serbian 😂😂 And Dutch. Somebody stop me! But now I can tell these languages apart and enjoy small wins from session to session. Honestly, I'd happily go back to the start and at least learn the greetings, so I can amaze everyone with a hello in many languages.</div>
         </div>
       </div>
-      <div class="quote"><p>“I'm chatting in two Georgian group chats and for the first time it feels easy. For five years, reading and replying was my hardest task — I used to Google-translate everything. Now I just write, maybe peeking at one word.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p></div>
-      <div class="quote"><p>“I love the concept: you learn to switch between languages quickly, in an easy mode, with no criticism and no obligation. It's a great brain workout — and so motivating to be around people who are also learning.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p></div>
-      <div class="quote"><p>“I'm usually a one-thing, stubborn kind of person, but the club has shown me really interesting things and made me open to trying new directions. What we did with the Japanese letters was wonderful.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p></div>
-      <div class="quote"><p>“The meetings are in English, so I get to practice — and everyone there is learning too, which makes it so much easier to get over the language barrier. Plus the method: all languages seem to share something, and this format helps you find those connections.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p></div>
-      <div class="quote"><p>“Objectively, nobody ‘learns’ a dozen languages the way most people mean it — but telling them apart and managing to say hello and interact is completely real. The atmosphere is so friendly: nobody yells, nobody pressures, we help each other and we laugh. Besides the brain workout, I leave in a great mood.”</p><p class="who">Anya</p></div>
-      <div class="quote"><p>“Not much is clear yet 😄 but I loved it! You're awesome. I'm definitely coming back — actually, I want to join for good.”</p><p class="who">Ergena, after her first session</p></div>
-      <div class="quote"><p>“It sounded so difficult on the first day, but now things are going better. Every new Georgian word I learn makes me feel better. Thank you for your patience!”</p><p class="who">A lady from Italy</p></div>
-      <div class="quote"><p>“Nelli, thank you — I had a blast in that session!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“I'm chatting in two Georgian group chats and for the first time it feels easy. For five years, reading and replying was my hardest task — I used to Google-translate everything. Now I just write, maybe peeking at one word.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>The other day I was in a second-hand bookshop, going through albums, and at some point I realized I couldn't remember what language the cover was in. My brain had just read it and filed it as "ah, that museum" — only later did I realize it was probably Romanian or something close. It happens with my thoughts too, outside work: I walk around and a phrase in my head is half-English, half-Georgian, and now Italian is creeping in. It's so fun — things mix, but my brain isn't shocked, because the meaning behind a thought is clear without words, and the form is just form. Yesterday I said "and then" and wasn't even sure the "and" was English, or whether the person at the meetup would get me 🤣. And now I'm texting in two Georgian group chats and for the first time it feels genuinely easy. For the past five years, reading and replying was my hardest task — I used to Google-translate everything. Now I just write — at most I peek at one word.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“I love the concept: you learn to switch between languages quickly, in an easy mode, with no criticism and no obligation. It's a great brain workout — and so motivating to be around people who are also learning.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>Hi! Yes, of course 👌😁 First, I love the concept itself: you learn to switch quickly between languages (which I struggle with), and in an easy mode — no criticism, no obligation. Second, it's a great brain workout: you have to switch on fast and start, say, reading in an unfamiliar language and grasping the task. And of course the motivation — it's wonderful to be around people who are also learning languages.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“I'm usually a one-thing, stubborn kind of person, but the club has shown me really interesting things and made me open to trying new directions. What we did with the Japanese letters was wonderful.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>I'm a person who used to focus on a single thing — very stubborn sometimes. There's something I'd like to push as far as I can, but being in the LLC has shown me things that are very interesting. Anything related to my objective will interest me, but I'm also open to trying other directions. What we did with the Japanese letters, I think, is wonderful.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“The meetings are in English, so I get to practice — and everyone there is learning too, which makes it so much easier to get over the language barrier. Plus the method: all languages seem to share something, and this format helps you find those connections.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>Hi! Right away — I focus mostly on English (conversational), but other languages interest me too. My impressions from the first meeting are positive, because: the meetings run in English, so I get to practice it; the people who came are learning too, which makes it easier to get over the language barrier; and the method itself — I suspect all languages share something, and this format should help find those connections. All in all, I'm glad I came!</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“Objectively, nobody ‘learns’ a dozen languages the way most people mean it — but telling them apart and managing to say hello and interact is completely real. The atmosphere is so friendly: nobody yells, nobody pressures, we help each other and we laugh. Besides the brain workout, I leave in a great mood.”</p><p class="who">Anya</p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>Nadya put it perfectly — it's a chance to give your brain a workout. Because, objectively, we won't "learn" many languages the way most people mean it — that really does sound like an impossible story. But telling languages apart and managing to say hello and interact a little — that's completely real. To say hello, goodbye and thank you in many languages is already a lot. And the atmosphere itself is friendly: nobody yells, nobody pressures, we help each other, we laugh. Personally, besides the brain workout, I leave in a great mood.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“Not much is clear yet 😄 but I loved it! You're awesome. I'm definitely coming back — actually, I want to join for good.”</p><p class="who">Ergena, after her first session</p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>Got it, thanks! Not much is clear yet 😄 but I loved it ))) You're awesome, really. I'll come again — actually, I want to join you for good.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“It sounded so difficult on the first day, but now things are going better. Every new Georgian word I learn makes me feel better. Thank you for your patience!”</p><p class="who">A lady from Italy</p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>It sounded so difficult on the first day, but now things are going better. I've even decided to take a university course in Georgian language and literature. It'll be hard because I work at two schools, but every new Georgian word I learn makes me feel better — now I can say მასწავლებელი faster 😄. Thank you for the time you dedicated to me, to us! 🙏❤️</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>“Nelli, thank you — I had a blast in that session!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p><span class="rm-cue" aria-hidden="true">Read full →</span><div class="rm-full" hidden>Nelli, thank you — I had a blast in the session!</div></div>
     </div>
   </section>
+
+  <!-- Reusable review popup -->
+  <dialog id="review-modal" class="review-modal" aria-labelledby="rm-name">
+    <div class="rm-inner">
+      <button type="button" class="rm-close" data-rm-close aria-label="Close">✕</button>
+      <p class="rm-name" id="rm-name"></p>
+      <div class="rm-body"></div>
+    </div>
+  </dialog>
 
   <!-- PRICE -->
   <section id="price">
@@ -572,6 +598,43 @@
     if (window.dataLayer) { window.dataLayer.push({ event: 'apply_click', cta_label: label }); }
     if (typeof fbq === 'function') { fbq('track', 'Lead'); }
   });
+</script>
+
+<!-- Review popups -->
+<script>
+(function(){
+  var modal=document.getElementById('review-modal');
+  if(!modal) return;
+  var nameEl=modal.querySelector('.rm-name');
+  var bodyEl=modal.querySelector('.rm-body');
+  var last=null;
+  function openCard(card){
+    var who=card.querySelector('.who');
+    var full=card.querySelector('.rm-full');
+    nameEl.innerHTML=who?who.innerHTML:'';
+    bodyEl.textContent=full?full.textContent:'';
+    last=document.activeElement;
+    if(typeof modal.showModal==='function'){modal.showModal();}else{modal.setAttribute('open','');}
+    var c=modal.querySelector('.rm-close'); if(c) c.focus();
+  }
+  function closeModal(){ if(modal.open){modal.close();}else{modal.removeAttribute('open');} }
+  modal.addEventListener('close',function(){ if(last&&last.focus) last.focus(); });
+  modal.querySelector('[data-rm-close]').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  document.querySelectorAll('#members [data-review]').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(e.target.closest('a')||e.target.closest('iframe')||e.target.closest('.rm-trigger')) return;
+      if(card.getAttribute('role')==='button') openCard(card);
+    });
+    card.addEventListener('keydown',function(e){
+      if(card.getAttribute('role')!=='button') return;
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openCard(card); }
+    });
+  });
+  document.querySelectorAll('#members .rm-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){ openCard(btn.closest('[data-review]')); });
+  });
+})();
 </script>
 
 <!-- Cookie consent banner -->

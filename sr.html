@@ -174,6 +174,21 @@
   .quote .who a{color:var(--blue);text-decoration:none;}
   .quote.video{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
   @media(min-width:680px){.quote.video{grid-template-columns:1fr 1fr;}}
+  /* clickable review cards + "read full" affordance */
+  .quote[role="button"]{cursor:pointer;transition:transform .08s,box-shadow .08s;}
+  .quote[role="button"]:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--line);}
+  .rm-cue,.rm-trigger{display:inline-block;margin-top:12px;color:var(--blue);font-size:13px;font-weight:500;}
+  .rm-trigger{background:none;border:none;padding:0;font-family:inherit;cursor:pointer;}
+  .quote[role="button"]:hover .rm-cue,.rm-trigger:hover{text-decoration:underline;}
+  .quote .rm-full{display:none;}
+  /* review modal (native <dialog>) */
+  .review-modal{border:none;padding:0;background:transparent;max-width:560px;width:calc(100% - 32px);max-height:calc(100dvh - 40px);}
+  .review-modal::backdrop{background:rgba(22,22,22,.55);backdrop-filter:blur(2px);}
+  .rm-inner{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--ink);padding:30px 28px;max-height:calc(100dvh - 44px);overflow:auto;}
+  .rm-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:10px;border:2px solid var(--ink);background:var(--lilac);font-size:15px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .rm-name{font-family:'Spectral',serif;font-weight:600;font-size:18px;margin-bottom:14px;padding-right:44px;color:var(--ink);}
+  .rm-name a{color:var(--blue);text-decoration:none;}
+  .rm-body{font-size:16px;line-height:1.7;color:#2c2c38;}
   .price{background:var(--lilac);border-radius:28px;padding:44px 48px;text-align:center;}
   .price .big{font-family:'Spectral',serif;font-size:46px;font-weight:600;margin:8px 0;}
   .price .was{color:var(--muted);font-size:15px;}
@@ -447,23 +462,34 @@
     <h2>Šta kažu članovi</h2>
     <p class="lead">Pravi ljudi iz našeg onlajn kluba — koji radi pet večeri nedeljno više od dve godine.</p>
     <div class="quotes">
-      <div class="quote video">
+      <div class="quote video" data-review>
         <iframe width="100%" height="260" src="https://www.youtube-nocookie.com/embed/4DT8mnyHFOY" title="Nadya — članica kluba" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:0;border-radius:14px;width:100%;aspect-ratio:16/9;height:auto"></iframe>
         <div>
           <p>„Dolazim samo da razgibam mozak — i ne pokušavam da ‘naučim’ korejski i japanski. I tatarski. I turski. I rumunski. I srpski. I holandski. Neka me neko zaustavi 😂 Ali sada umem da razlikujem te jezike i uživam u malim pobedama iz časa u čas.”</p>
           <p class="who">Nadya</p>
+          <button type="button" class="rm-trigger" aria-haspopup="dialog">Pročitaj ceo →</button>
+          <div class="rm-full" hidden>Dolazim samo da razgibam mozak — i ne ciljam da „naučim" korejski i japanski. I tatarski, i turski. I rumunski. I srpski 😂😂 I holandski. Neka me neko zaustavi! Ali sada umem da razlikujem te jezike i uživam u malim pobedama iz časa u čas. Iskreno, rado bih se vratila na početak i bar naučila pozdrave, da sve oduševim pozdravom na mnogo jezika.</div>
         </div>
       </div>
-      <div class="quote"><p>„Dopisujem se u dve grupe na gruzijskom i prvi put mi je to stvarno lako. Pet godina mi je čitanje i odgovaranje bilo najteži zadatak — sve sam prevodila preko Google-a. Sad jednostavno pišem, najviše provirim jednu reč.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p></div>
-      <div class="quote"><p>„Obožavam koncept: učiš da brzo prebacuješ između jezika, opušteno, bez kritike i obaveze. Odlična vežba za mozak — i toliko motiviše biti među ljudima koji takođe uče.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p></div>
-      <div class="quote"><p>„Obično sam tvrdoglava osoba fokusirana na jednu stvar, ali klub mi je pokazao stvarno zanimljive stvari i otvorio me da probam nove pravce. Ono što smo radili sa japanskim pismom bilo je divno.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p></div>
-      <div class="quote"><p>„Susreti su na engleskom, pa mogu da vežbam — a svi tamo takođe uče, što mnogo olakšava prevazilaženje jezičke barijere. Plus metod: čini se da svi jezici imaju nešto zajedničko, a ovaj format pomaže da nađeš te veze.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p></div>
-      <div class="quote"><p>„Objektivno, niko ne ‘nauči’ desetak jezika onako kako većina to misli — ali razlikovati ih i umeti da pozdraviš i nekako se sporazumeš je sasvim realno. A atmosfera je tako prijateljska: niko ne viče, niko ne pritiska, pomažemo jedni drugima i smejemo se. Pored vežbe za mozak, odlazim odlično raspoložena.”</p><p class="who">Anya</p></div>
-      <div class="quote"><p>„Još mi nije sve jasno 😄 ali oduševljena sam! Vi ste sjajni. Sigurno dolazim opet — zapravo, želim da se pridružim za stalno.”</p><p class="who">Ergena, posle prvog časa</p></div>
-      <div class="quote"><p>„Prvog dana je zvučalo jako teško, ali sada ide bolje. Svaka nova gruzijska reč koju naučim čini da se osećam bolje. Hvala na strpljenju!”</p><p class="who">Dama iz Italije</p></div>
-      <div class="quote"><p>„Nelli, hvala — uživala sam na času!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Dopisujem se u dve grupe na gruzijskom i prvi put mi je to stvarno lako. Pet godina mi je čitanje i odgovaranje bilo najteži zadatak — sve sam prevodila preko Google-a. Sad jednostavno pišem, najviše provirim jednu reč.”</p><p class="who">Aleksandra · <a href="https://t.me/Ferrhega">@Ferrhega</a></p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Pre neki dan sam bila u antikvarnici, prelistavala albume i u jednom trenutku shvatila da ne mogu da se setim na kom je jeziku bila korica. Mozak je samo pročitao i zabeležio „aha, onaj muzej" — tek kasnije sam shvatila da je verovatno bio rumunski ili nešto slično. Tako mi je i sa mislima, van posla: hodam, a fraza u glavi mi je pola engleska, pola gruzijska, a sad se i italijanski umešao. Baš je zabavno — sve se meša, ali mozak nije u šoku, jer je smisao misli jasan i bez reči, a forma je samo forma. Juče sam rekla „and then" i nisam bila sigurna ni da je „and" iz engleskog, ni da li će me osoba na susretu razumeti 🤣. I sad se dopisujem u dve grupe na gruzijskom i prvi put mi je to zaista lako. Prethodnih pet godina čitanje i odgovaranje bilo mi je najteži zadatak — sve sam prevodila preko Google-a. A sad jednostavno pišem — najviše provirim jednu reč.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Obožavam koncept: učiš da brzo prebacuješ između jezika, opušteno, bez kritike i obaveze. Odlična vežba za mozak — i toliko motiviše biti među ljudima koji takođe uče.”</p><p class="who">Maya · <a href="https://t.me/maryrosenblum">@maryrosenblum</a></p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Zdravo! Da, naravno 👌😁 Prvo, sviđa mi se sam koncept: učiš da brzo prebacuješ s jednog jezika na drugi (a s tim imam problema), i to opušteno — bez kritike i obaveze. Drugo, odlična je vežba za mozak: moraš brzo da se uključiš i kreneš, na primer, da čitaš na nepoznatom jeziku i shvatiš suštinu zadatka. I naravno, motivacija — divno je biti među ljudima koji takođe uče jezike.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Obično sam tvrdoglava osoba fokusirana na jednu stvar, ali klub mi je pokazao stvarno zanimljive stvari i otvorio me da probam nove pravce. Ono što smo radili sa japanskim pismom bilo je divno.”</p><p class="who">Rodrigo · <a href="https://t.me/Herrpilgrim">@Herrpilgrim</a></p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Ja sam osoba koja se obično fokusira na jednu stvar — ponekad veoma tvrdoglava. Postoji nešto što želim da gurnem što dalje mogu, ali boravak u klubu (LLC) pokazao mi je veoma zanimljive stvari. Sve što je vezano za moj cilj zanimaće me, ali otvoren sam i da probam druge pravce. Ono što smo radili sa japanskim pismom — mislim da je predivno.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Susreti su na engleskom, pa mogu da vežbam — a svi tamo takođe uče, što mnogo olakšava prevazilaženje jezičke barijere. Plus metod: čini se da svi jezici imaju nešto zajedničko, a ovaj format pomaže da nađeš te veze.”</p><p class="who">Veronika · <a href="https://t.me/v_e_r_o_n_i_k_saf">@v_e_r_o_n_i_k_saf</a></p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Zdravo! Odmah da kažem — najviše se fokusiram na engleski (razgovorni), ali zanimaju me i drugi jezici. Utisci s prvog susreta su pozitivni, jer: susreti se vode na engleskom, pa mogu da ga vežbam; ljudi koji su došli takođe uče, pa mi je lakše da prevaziđem jezičku barijeru; i sam metod — pretpostavljam da svi jezici imaju nešto zajedničko, a ovaj format će pomoći da se te veze pronađu. Sve u svemu, drago mi je što sam došla!</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Objektivno, niko ne ‘nauči’ desetak jezika onako kako većina to misli — ali razlikovati ih i umeti da pozdraviš i nekako se sporazumeš je sasvim realno. A atmosfera je tako prijateljska: niko ne viče, niko ne pritiska, pomažemo jedni drugima i smejemo se. Pored vežbe za mozak, odlazim odlično raspoložena.”</p><p class="who">Anya</p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Nađa je to savršeno rekla — prilika da razgibaš mozak. Jer, objektivno, nećemo „naučiti" mnogo jezika onako kako većina to misli — to zaista zvuči kao nemoguća priča. Ali razlikovati jezike i kako-tako se pozdraviti i malo komunicirati — to je sasvim realno. Pozdraviti se, oprostiti i reći hvala na mnogo jezika — već je mnogo. A i sama atmosfera je prijateljska: niko ne viče, niko ne pritiska, pomažemo jedni drugima, smejemo se. Lično, pored vežbe za mozak, odlazim odlično raspoložena.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Još mi nije sve jasno 😄 ali oduševljena sam! Vi ste sjajni. Sigurno dolazim opet — zapravo, želim da se pridružim za stalno.”</p><p class="who">Ergena, posle prvog časa</p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Razumem, hvala! Još mi nije mnogo toga jasno 😄 ali oduševljena sam ))) Stvarno ste sjajni. Dolazim opet — zapravo, želim da vam se pridružim za stalno.</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Prvog dana je zvučalo jako teško, ali sada ide bolje. Svaka nova gruzijska reč koju naučim čini da se osećam bolje. Hvala na strpljenju!”</p><p class="who">Dama iz Italije</p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Prvog dana je zvučalo jako teško, ali sada ide bolje. Čak sam odlučila da upišem univerzitetski kurs gruzijskog jezika i književnosti. Biće teško jer radim u dve škole, ali svaka nova gruzijska reč koju naučim čini da se osećam bolje — sad brže izgovaram მასწავლებელი 😄. Hvala na vremenu koje si posvetila meni, nama! 🙏❤️</div></div>
+      <div class="quote" data-review role="button" tabindex="0" aria-haspopup="dialog"><p>„Nelli, hvala — uživala sam na času!”</p><p class="who">Alexandra · <a href="https://t.me/alexandra_sagidullina">@alexandra_sagidullina</a></p><span class="rm-cue" aria-hidden="true">Pročitaj ceo →</span><div class="rm-full" hidden>Neli, hvala — uživala sam na času!</div></div>
     </div>
   </section>
+
+  <!-- Reusable review popup -->
+  <dialog id="review-modal" class="review-modal" aria-labelledby="rm-name">
+    <div class="rm-inner">
+      <button type="button" class="rm-close" data-rm-close aria-label="Zatvori">✕</button>
+      <p class="rm-name" id="rm-name"></p>
+      <div class="rm-body"></div>
+    </div>
+  </dialog>
 
   <section id="price">
     <div class="price">
@@ -525,6 +551,43 @@
     if (window.dataLayer) { window.dataLayer.push({ event: 'apply_click', cta_label: label }); }
     if (typeof fbq === 'function') { fbq('track', 'Lead'); }
   });
+</script>
+
+<!-- Review popups -->
+<script>
+(function(){
+  var modal=document.getElementById('review-modal');
+  if(!modal) return;
+  var nameEl=modal.querySelector('.rm-name');
+  var bodyEl=modal.querySelector('.rm-body');
+  var last=null;
+  function openCard(card){
+    var who=card.querySelector('.who');
+    var full=card.querySelector('.rm-full');
+    nameEl.innerHTML=who?who.innerHTML:'';
+    bodyEl.textContent=full?full.textContent:'';
+    last=document.activeElement;
+    if(typeof modal.showModal==='function'){modal.showModal();}else{modal.setAttribute('open','');}
+    var c=modal.querySelector('.rm-close'); if(c) c.focus();
+  }
+  function closeModal(){ if(modal.open){modal.close();}else{modal.removeAttribute('open');} }
+  modal.addEventListener('close',function(){ if(last&&last.focus) last.focus(); });
+  modal.querySelector('[data-rm-close]').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  document.querySelectorAll('#members [data-review]').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(e.target.closest('a')||e.target.closest('iframe')||e.target.closest('.rm-trigger')) return;
+      if(card.getAttribute('role')==='button') openCard(card);
+    });
+    card.addEventListener('keydown',function(e){
+      if(card.getAttribute('role')!=='button') return;
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openCard(card); }
+    });
+  });
+  document.querySelectorAll('#members .rm-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){ openCard(btn.closest('[data-review]')); });
+  });
+})();
 </script>
 
 <!-- Cookie consent banner — srpski tekst neka pregleda izvorni govornik pre objave. -->

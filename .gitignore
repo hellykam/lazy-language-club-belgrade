@@ -17,6 +17,9 @@ og-image.svg.png
 # Original full-size source photo (optimized nelli.jpg is committed instead)
 Nelli Kam 01.png
 
+# Internal reference doc (full reviews EN/SR/RU) — not for the public site
+reviews-EN-SR-RU.md
+
 # Raw video / review source material — never commit (too large; host on YouTube/Vimeo)
 *.mp4
 *.mov
