@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Lazy Language Club — session materials</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--lilac:#D9DAF6;--lilac-soft:#ECECFB;--ink:#161616;--mint:#C7F0A1;--blue:#6A6EE2;--muted:#5c5c6b;--line:#cdcef0;--paper:#fff;--sheetbg:#e9e9f3;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--lilac-soft);line-height:1.6;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3{font-family:'Spectral',Georgia,serif;font-weight:600;line-height:1.1;}
+  a{color:var(--blue);}
+  header{padding:40px 0 10px;}
+  header h1{font-size:38px;}
+  header p{font-size:17px;color:var(--muted);margin-top:8px;max-width:42em;}
+  .steps{display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0 8px;}
+  @media(min-width:680px){.steps{grid-template-columns:repeat(3,1fr);}}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px;}
+  .step .n{font-family:'Spectral',serif;font-size:30px;color:var(--blue);line-height:1;}
+  .step h3{font-size:16px;margin:6px 0 4px;}
+  .step p{font-size:14px;color:var(--muted);}
+  section.lang{padding:32px 0;border-top:1px solid var(--line);}
+  .lhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .lhead h2{font-size:26px;}
+  .lhead .flag{font-size:30px;line-height:1;}
+  .btn{display:inline-block;background:var(--mint);color:var(--ink);font-weight:500;font-size:14px;
+       padding:9px 16px;border-radius:10px;text-decoration:none;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);}
+  .btn.alt{background:var(--paper);}
+  .audio-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
+  audio{height:40px;max-width:100%;}
+  /* sheet viewer: iframe is rendered at its natural size, then scaled to fit (see fitSheets) */
+  .sheet{position:relative;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--sheetbg);}
+  .sheet iframe{border:0;display:block;transform-origin:top left;width:100%;height:560px;}
+  .links{margin-top:10px;font-size:14px;}
+  footer{padding:30px 0;font-size:13px;color:var(--muted);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Session materials 🎧</h1>
+    <p>Everything for a Lazy Language Club evening in one place — printable sheets, native audio, and the digital versions. (Private page — not indexed, not linked from the site.)</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Warm-up in English</h3><p>Run the speed-chat with the English A6 card first, so the format clicks — relaxed, no pressure.</p></div>
+      <div class="step"><div class="n">2</div><h3>Headphones on</h3><p>Play the audio and shadow the native — repeat out loud, catch the melody.</p></div>
+      <div class="step"><div class="n">3</div><h3>Your language</h3><p>Grab the A3 sheet, play the audio, then run the dialogues with a partner. Swap roles, swap partners.</p></div>
+    </div>
+  </header>
+
+  <!-- ENGLISH WARM-UP (A6) — embed + PDF only, no audio -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇬🇧</span><h2>English — warm-up card (A6)</h2></div>
+    <div class="sheet" data-w="445" data-h="607" data-max="460"><iframe src="card-EN-A6.html" title="English A6 warm-up card" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-EN-A6.pdf" target="_blank" rel="noopener">Open the printable PDF (A6) ↗</a></p>
+  </section>
+
+  <!-- ITALIAN -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇮🇹</span><h2>Italian</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/it_full.mp3"></audio>
+      <a class="btn alt" href="audio/it_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-IT-A3.html" title="Italian A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-IT-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <!-- FRENCH -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇫🇷</span><h2>French</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/fr_full.mp3"></audio>
+      <a class="btn alt" href="audio/fr_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-FR-A3.html" title="French A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-FR-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <!-- SPANISH -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇪🇸</span><h2>Spanish</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/es_full.mp3"></audio>
+      <a class="btn alt" href="audio/es_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-ES-A3.html" title="Spanish A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-ES-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <!-- SERBIAN -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇷🇸</span><h2>Serbian</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/sr_full.mp3"></audio>
+      <a class="btn alt" href="audio/sr_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-SR-A3.html" title="Serbian A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-SR-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <!-- TURKISH -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇹🇷</span><h2>Turkish</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/tr_full.mp3"></audio>
+      <a class="btn alt" href="audio/tr_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-TR-A3.html" title="Turkish A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-TR-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <!-- RUSSIAN -->
+  <section class="lang">
+    <div class="lhead"><span class="flag">🇷🇺</span><h2>Russian</h2></div>
+    <div class="audio-row">
+      <audio controls preload="none" src="audio/ru_full.mp3"></audio>
+      <a class="btn alt" href="audio/ru_full.mp3" target="_blank" rel="noopener">Open audio ↗</a>
+    </div>
+    <div class="sheet" data-w="796" data-h="566"><iframe src="card-RU-A3.html" title="Russian A3 sheet" loading="lazy"></iframe></div>
+    <p class="links"><a href="card-RU-A3.pdf" target="_blank" rel="noopener">Open the printable PDF (A3) ↗</a></p>
+  </section>
+
+  <footer>Lazy Language Club · session materials · made with the Paralang method</footer>
+</div>
+
+<script>
+  // Render each sheet iframe at its natural size, then scale it to fit the column width
+  // (A3 sheets fill the width; the small A6 card is capped + centered). Full sheet always visible.
+  function fitSheets(){
+    document.querySelectorAll('.sheet').forEach(function(box){
+      var w = +box.dataset.w, h = +box.dataset.h;
+      var maxw = box.dataset.max ? +box.dataset.max : Infinity;
+      var frame = box.querySelector('iframe');
+      if(!w || !h || !frame) return;
+      var avail = box.clientWidth;
+      var target = Math.min(avail, maxw);
+      var scale = target / w;
+      frame.style.width = w + 'px';
+      frame.style.height = h + 'px';
+      frame.style.transform = 'scale(' + scale + ')';
+      frame.style.marginLeft = ((avail - target) / 2) + 'px';
+      box.style.height = (h * scale) + 'px';
+    });
+  }
+  window.addEventListener('DOMContentLoaded', fitSheets);
+  window.addEventListener('load', fitSheets);
+  window.addEventListener('resize', fitSheets);
+</script>
+
+</body>
+</html>

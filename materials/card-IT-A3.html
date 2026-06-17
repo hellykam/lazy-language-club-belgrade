@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Speaking Italian — speed-chat sheet (A3 landscape)</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--lilac:#D9DAF6;--ink:#161616;--mint:#C7F0A1;--blue:#6A6EE2;--muted:#9a9aa6;--gray:#7c7c88;--line:#dcdcec;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e9e9f3;font-family:'Inter',system-ui,sans-serif;color:var(--ink);padding:18px;}
+  @page{size:A3 landscape;margin:0;}
+
+  /* screen: scale the real A3-landscape sheet so the whole page is visible */
+  .stage{width:760px;max-width:100%;height:530px;overflow:hidden;margin:0 auto;position:relative;}
+  .sheet{position:absolute;top:0;left:0;transform:scale(.46);transform-origin:top left;
+         width:420mm;height:297mm;background:#fff;padding:11mm;overflow:hidden;}
+
+  .head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:7px;margin-bottom:9px;}
+  .h-l h1{font-family:'Spectral',serif;font-weight:600;font-size:26px;}
+  .h-l small{font-size:11px;color:var(--blue);font-weight:500;letter-spacing:.05em;}
+  .rules{font-size:9px;color:#33333c;line-height:1.45;max-width:215mm;text-align:right;}
+  .rules b{font-family:'Spectral',serif;}
+  .qr{width:58px;height:58px;border:1.5px dashed var(--ink);border-radius:7px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:8px;color:var(--muted);line-height:1.1;padding:4px;flex:none;margin-left:12px;}
+
+  h2{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--blue);border-bottom:1px solid var(--line);padding-bottom:2px;margin-bottom:7px;}
+  .row{display:flex;gap:9mm;align-items:flex-start;}
+  .meet{flex:0 0 80mm;}
+  .dialog{flex:1;}
+  .dialog .flow{column-count:3;column-gap:9mm;}
+
+  .ex{margin-bottom:9px;break-inside:avoid;}
+  .it{font-family:'Spectral',serif;font-weight:600;font-size:18.5px;line-height:1.08;}
+  .sub7{font-size:7px;color:var(--gray);line-height:1.2;margin-top:1px;}
+  .a{font-size:12px;padding-left:9px;position:relative;margin-top:2px;line-height:1.25;}
+  .a::before{content:"·";position:absolute;left:0;color:var(--blue);font-weight:700;}
+  .ph{color:var(--muted);}
+  .g{color:var(--gray);}
+  .subs{margin:2px 0 0 16px;font-size:10px;color:#333;line-height:1.36;}
+
+  /* Words & Verbs — bottom-right strip */
+  .wv{margin-top:7mm;margin-left:auto;width:262mm;background:var(--lilac);border-radius:10px;padding:10px 14px;display:flex;gap:18px;}
+  .wv h3{font-family:'Spectral',serif;font-weight:600;font-size:12px;color:var(--blue);margin-bottom:3px;}
+  .wcol{font-size:10px;line-height:1.6;}
+  .wcol .item{display:block;}
+  .wcol .note{font-size:7px;color:var(--gray);margin-top:3px;line-height:1.3;}
+  .vt{font-size:9px;line-height:1.45;}
+  .vt b{font-family:'Spectral',serif;font-size:10px;color:var(--ink);display:block;}
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .stage{width:auto;height:auto;overflow:visible;}
+    .sheet{position:static;transform:none;}
+  }
+</style>
+</head>
+<body>
+ <div class="stage">
+  <div class="sheet">
+
+    <div class="head">
+      <div class="h-l">
+        <h1>Speaking Italian 🇮🇹</h1>
+        <small>SPEED-CHAT SHEET · 🎧 listen, repeat, swap partners</small>
+      </div>
+      <div class="rules">
+        <b>Reading:</b> c/g + i/e → soft (ci/ce «ch», gi/ge «j»); else hard (k/g) · <b>ch, gh</b> = k, g · <b>gn</b> «ny» · <b>gl</b>(i) «ly» · <b>z</b> «ts/dz» · <b>s</b> between vowels «z» · <b>h</b> silent · stress = 2nd-to-last syllable
+      </div>
+      <div class="qr">scan →<br>IT audio</div>
+    </div>
+
+    <div class="row">
+
+      <!-- 1 · MEET & GREET -->
+      <div class="meet">
+        <h2>1 · Meet &amp; greet</h2>
+        <div class="ex"><div class="it">Ciao! / Salve!</div><div class="sub7">chow / SAHL-ve · hi / hello</div></div>
+        <div class="ex">
+          <div class="it">Come stai? E tu?</div><div class="sub7">how are you? and you?</div>
+          <div class="a">Sto bene <span class="g">— I'm good</span></div>
+          <div class="a">Mi sento male <span class="g">— I'm not well</span></div>
+        </div>
+        <div class="ex">
+          <div class="it">Come ti chiami?</div><div class="sub7">chi = ki · what's your name?</div>
+          <div class="a">Mi chiamo <span class="ph">[Nelli]</span></div>
+          <div class="a">Sono <span class="ph">[Nelli]</span></div>
+        </div>
+        <div class="ex">
+          <div class="it">Arrivederci! / Ci vediamo!</div>
+          <div class="sub7">…DER-chi · bye / see you</div>
+        </div>
+        <div class="sub7" style="font-size:9px;margin-top:6px">Sì / No · Grazie mille <span class="g">(GRAH-tsye MEE-le)</span></div>
+      </div>
+
+      <!-- 3 · DIALOG -->
+      <div class="dialog">
+        <h2>3 · Dialog</h2>
+        <div class="flow">
+          <div class="ex">
+            <div class="it">Cosa fai?</div><div class="sub7">what do you do?</div>
+            <div class="a">Sono <span class="ph">[designer]</span></div>
+            <div class="subs">manager<br>programmatore<br>cameriere<br>insegnante<br>studente</div>
+          </div>
+          <div class="ex"><div class="it">Dove vivi?</div><div class="sub7">where do you live?</div><div class="a">Vivo a <span class="ph">[Belgrado]</span></div></div>
+          <div class="ex"><div class="it">Dove studi? / lavori?</div><div class="sub7">where do you study / work?</div><div class="a">Studio / Lavoro <span class="ph">[in un caffè]</span></div></div>
+          <div class="ex"><div class="it">Cosa bevi? / compri?</div><div class="sub7">what do you drink / buy?</div><div class="a">Bevo / Compro <span class="ph">[un caffè]</span></div></div>
+          <div class="ex"><div class="it">Cosa mangi?</div><div class="sub7">MAN-ji · what do you eat?</div><div class="a">Mangio <span class="ph">[una pizza]</span></div></div>
+          <div class="ex"><div class="it">Cosa ti piace?</div><div class="sub7">pi-A-che · what do you like?</div><div class="a">Mi piace <span class="ph">[il caffè]</span></div></div>
+          <div class="ex"><div class="it">Cos'è questo?</div><div class="sub7">ko-ZE · what is this?</div><div class="a">Questo è <span class="ph">[un caffè]</span></div></div>
+          <div class="ex"><div class="it">Chi è questo?</div><div class="sub7">ki e · who is this?</div><div class="a">È <span class="ph">[una persona]</span></div></div>
+          <div class="ex">
+            <div class="it">Cosa vuoi?</div><div class="sub7">vwoy · what do you want?</div>
+            <div class="a">Voglio <span class="ph">[un caffè]</span></div>
+            <div class="a">Quante ne vuoi? — <span class="ph">[due caffè]</span></div>
+          </div>
+          <div class="ex"><div class="it">Hai <span class="ph">[un taxi]</span>?</div><div class="sub7">ai · do you have…?</div><div class="a">Sì, ho… / No, non ho…</div></div>
+          <div class="ex"><div class="it">Puoi darmi <span class="ph">[un caffè]</span>?</div><div class="sub7">pwoy DAR-mi · can you give me?</div><div class="a">Sì, te lo do.</div></div>
+          <div class="ex"><div class="it">Che prezzo?</div><div class="sub7">ke PRET-tso · what price?</div><div class="a">Il prezzo è <span class="ph">[cinque euro]</span></div></div>
+          <div class="ex"><div class="it">Dove stai andando?</div><div class="sub7">where are you going?</div><div class="a">Vado a <span class="ph">[un bar]</span></div></div>
+          <div class="ex"><div class="it">Da dove vieni?</div><div class="sub7">where are you from?</div><div class="a">Vengo da <span class="ph">[Russia]</span></div></div>
+          <div class="ex">
+            <div class="it">Quali lingue parli?</div><div class="sub7">LIN-gwe · what languages?</div>
+            <div class="a">Parlo <span class="ph">[inglese]</span></div>
+            <div class="subs">russo<br>serbo<br>italiano<br>francese</div>
+          </div>
+          <div class="ex"><div class="it">Quale lingua studi adesso?</div><div class="sub7">which language now?</div><div class="a">Sto imparando <span class="ph">[italiano]</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 · WORDS & VERBS (bottom-right) -->
+    <div class="wv">
+      <div class="wcol">
+        <h3>2 · Words</h3>
+        <span class="item"><span class="g">un</span> caffè · <span class="g">un</span> cappuccino</span>
+        <span class="item"><span class="g">una</span> pizza · <span class="g">una</span> coca-cola</span>
+        <span class="item"><span class="g">un'</span>università · <span class="g">un</span> ristorante</span>
+        <span class="item"><span class="g">un</span> bar · <span class="g">un</span> hotel · <span class="g">un</span> taxi</span>
+        <span class="item"><span class="g">un</span> museo · <span class="g">un</span> supermarket · <span class="g">una</span> banca</span>
+        <span class="item" style="margin-top:3px"><b>adj:</b> interessante · importante · normale · perfetto · popolare · fantastico</span>
+        <div class="note">♂ un · ♀ una / un' (+vowel) · uno (+z, s+cons.) — plurals ♂ -i / ♀ -e</div>
+      </div>
+      <div class="wcol" style="flex:none">
+        <h3>Verbs</h3>
+        <div style="display:flex;gap:15px">
+          <div class="vt"><b>essere</b>io sono<br>tu sei<br>lui/lei è<br>noi siamo<br>voi siete<br>loro sono</div>
+          <div class="vt"><b>avere</b>io ho<br>tu hai<br>lui/lei ha<br>noi abbiamo<br>voi avete<br>loro hanno</div>
+          <div class="vt"><b>volere</b>io voglio<br>tu vuoi<br>lui/lei vuole<br>noi vogliamo<br>voi volete<br>loro vogliono</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ </div>
+</body>
+</html>
