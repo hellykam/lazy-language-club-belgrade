@@ -126,7 +126,11 @@
   .art{display:flex;justify-content:center;align-items:center;position:relative;min-height:240px;order:-1;}
   @media(min-width:760px){.art{order:0;}}
   .doodle{position:absolute;font-size:30px;color:var(--blue);}
-  .flagbadge{position:absolute;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:2px 2px 0 var(--ink);}
+  /* hero illustration: mascot ringed by floating language flags */
+  .scene{position:relative;width:300px;max-width:100%;aspect-ratio:1/1;margin:0 auto;display:flex;align-items:center;justify-content:center;}
+  .scene .mascot{width:58%;height:auto;}
+  .flagbadge{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:2px 2px 0 var(--ink);animation:flagbob 4.8s ease-in-out infinite;will-change:transform;}
+  @keyframes flagbob{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-9px) rotate(4deg);}}
   .float{animation:float 4s ease-in-out infinite;}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
   .kicker{font-family:'Spectral',serif;font-style:italic;font-size:18px;color:var(--muted);margin-bottom:6px;}
@@ -217,6 +221,7 @@
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
     .float{animation:none;}
+    .flagbadge{animation:none;}
     .cta{transition:none;}
   }
   a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px;}
@@ -342,19 +347,21 @@
       </div>
     </div>
     <div class="art">
-      <span class="flagbadge float" style="top:0;left:18%;animation-delay:0s">🇷🇸</span>
-      <span class="flagbadge float" style="top:4%;right:12%;animation-delay:.4s">🇬🇧</span>
-      <span class="flagbadge float" style="top:38%;left:-4%;animation-delay:.8s">🇫🇷</span>
-      <span class="flagbadge float" style="top:42%;right:-4%;animation-delay:1.2s">🇷🇺</span>
-      <span class="flagbadge float" style="bottom:30%;right:6%;animation-delay:1.6s">🇮🇹</span>
-      <span class="flagbadge float" style="bottom:2%;left:14%;animation-delay:2s">🇪🇸</span>
-      <span class="flagbadge float" style="bottom:-2%;right:18%;animation-delay:2.4s">🇹🇷</span>
-      <svg class="float" width="240" viewBox="-100 -92 200 196" role="img" aria-label="Maskota Lazy Language Cluba sa slušalicama">
+      <div class="scene">
+        <span class="flagbadge" style="left:50%;top:3%;animation-delay:0s">🇷🇸</span>
+        <span class="flagbadge" style="left:86%;top:21%;animation-delay:.5s">🇬🇧</span>
+        <span class="flagbadge" style="left:95%;top:60%;animation-delay:1s">🇫🇷</span>
+        <span class="flagbadge" style="left:70%;top:91%;animation-delay:1.5s">🇷🇺</span>
+        <span class="flagbadge" style="left:30%;top:91%;animation-delay:2s">🇮🇹</span>
+        <span class="flagbadge" style="left:5%;top:60%;animation-delay:2.5s">🇪🇸</span>
+        <span class="flagbadge" style="left:14%;top:21%;animation-delay:3s">🇹🇷</span>
+      <svg class="mascot float" viewBox="-100 -92 200 196" role="img" aria-label="Maskota Lazy Language Cluba sa slušalicama">
         <use href="#llc-body"/><use href="#llc-eye"/>
         <path d="M-54,-20 C-60,-76 60,-76 54,-20" stroke="#161616" stroke-width="8" fill="none" stroke-linecap="round"/>
         <circle cx="-56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/>
         <circle cx="56" cy="-8" r="14" fill="#C7F0A1" stroke="#161616" stroke-width="4"/>
       </svg>
+      </div>
     </div>
   </section>
 
